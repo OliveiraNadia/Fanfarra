@@ -13,8 +13,6 @@ namespace Fanfarra.Infra.Data.Connectors
 {
     public class TesouroDiretoConnector : ITesouroDiretoConnector
     {
-        private HttpClient _client = new HttpClient();
-
         public async Task<IEnumerable<TesouroDireto>> ObterCustodia()
         {
            var tesouroDireto = new List<TesouroDireto>();
@@ -22,8 +20,7 @@ namespace Fanfarra.Infra.Data.Connectors
             {
                 using (var response = await client.GetAsync("http://www.mocky.io/v2/5e3428203000006b00d9632a"))
                 {
-                    string teste = await response.Content.ReadAsStringAsync();
-                     return tesouroDireto = JsonConvert.DeserializeObject<List<TesouroDireto>>(teste);
+                     return tesouroDireto = JsonConvert.DeserializeObject<List<TesouroDireto>>(await response.Content.ReadAsStringAsync());
                 }
             }
         }

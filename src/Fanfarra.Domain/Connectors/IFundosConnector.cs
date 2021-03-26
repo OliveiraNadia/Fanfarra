@@ -4,8 +4,8 @@ using Fanfarra.Domain.Models;
 
 namespace Fanfarra.Domain.Connectors
 {
-    public interface ITesouroDiretoConnector
+    public interface IFundosConnector
     {
-        Task<IEnumerable<TesouroDireto>> ObterCustodia();
+        Task<IEnumerable<Fundos>> ObterCustodia();
     }
 }
