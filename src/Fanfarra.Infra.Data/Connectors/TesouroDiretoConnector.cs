@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Fanfarra.Domain.Connectors;
 using Fanfarra.Domain.Models;
+using Newtonsoft.Json;
 
 namespace Fanfarra.Infra.Data.Connectors
 {
@@ -16,16 +17,14 @@ namespace Fanfarra.Infra.Data.Connectors
 
         public async Task<IEnumerable<TesouroDireto>> ObterCustodia()
         {
-   
+           var tesouroDireto = new List<TesouroDireto>();
            using(var client = new HttpClient())
             {
-                var custodias = default(IEnumerable<TesouroDireto>);
-                client.BaseAddress = new Uri("http://localhost:53557/");
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                HttpResponseMessage response = await client.GetAsync("http://www.mocky.io/v2/5e3428203000006b00d9632a");
-                return custodias;
+                using (var response = await client.GetAsync("http://www.mocky.io/v2/5e3428203000006b00d9632a"))
+                {
+                    string teste = await response.Content.ReadAsStringAsync();
+                     return tesouroDireto = JsonConvert.DeserializeObject<List<TesouroDireto>>(teste);
+                }
             }
         }
     }
