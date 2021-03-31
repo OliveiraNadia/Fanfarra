@@ -7,9 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02571457-E0C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fanfarra.Api", "src\Fanfarra.Api\Fanfarra.Api.csproj", "{F4B2CC86-938B-43C6-AC32-F5A4641F82C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanfarra.Infra.Data", "src\Fanfarra.Infra.Data\Fanfarra.Infra.Data.csproj", "{8A8194A5-DBE0-461B-8DA8-4E23768822E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fanfarra.Infra.Data", "src\Fanfarra.Infra.Data\Fanfarra.Infra.Data.csproj", "{8A8194A5-DBE0-461B-8DA8-4E23768822E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanfarra.Domain", "src\Fanfarra.Domain\Fanfarra.Domain.csproj", "{BEF695FB-3C48-40FF-BE9B-96BCCFF351AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fanfarra.Domain", "src\Fanfarra.Domain\Fanfarra.Domain.csproj", "{BEF695FB-3C48-40FF-BE9B-96BCCFF351AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanfarra.Infra.IoC", "src\Fanfarra.Infra.IoC\Fanfarra.Infra.IoC.csproj", "{3FB9FB74-D454-4549-9BE2-2A6858DF6559}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{BEF695FB-3C48-40FF-BE9B-96BCCFF351AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEF695FB-3C48-40FF-BE9B-96BCCFF351AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEF695FB-3C48-40FF-BE9B-96BCCFF351AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FB9FB74-D454-4549-9BE2-2A6858DF6559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FB9FB74-D454-4549-9BE2-2A6858DF6559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FB9FB74-D454-4549-9BE2-2A6858DF6559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FB9FB74-D454-4549-9BE2-2A6858DF6559}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +43,7 @@ Global
 		{F4B2CC86-938B-43C6-AC32-F5A4641F82C9} = {02571457-E0C5-46DF-9260-BCF14A0DB78B}
 		{8A8194A5-DBE0-461B-8DA8-4E23768822E0} = {02571457-E0C5-46DF-9260-BCF14A0DB78B}
 		{BEF695FB-3C48-40FF-BE9B-96BCCFF351AC} = {02571457-E0C5-46DF-9260-BCF14A0DB78B}
+		{3FB9FB74-D454-4549-9BE2-2A6858DF6559} = {02571457-E0C5-46DF-9260-BCF14A0DB78B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7099D642-022B-4DD7-9731-92590DADB8B2}

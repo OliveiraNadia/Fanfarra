@@ -1,18 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Fanfarra.Domain\Fanfarra.Domain.csproj" />
     <ProjectReference Include="..\Fanfarra.Infra.Data\Fanfarra.Infra.Data.csproj" />
-    <ProjectReference Include="..\Fanfarra.Infra.IoC\Fanfarra.Infra.IoC.csproj" />
   </ItemGroup>
 </Project>

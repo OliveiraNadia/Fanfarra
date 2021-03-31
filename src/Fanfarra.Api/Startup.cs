@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Fanfarra.Infra.IoC;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace Fanfarra.Api
 {
@@ -22,14 +24,18 @@ namespace Fanfarra.Api
         }
 
         public IConfiguration Configuration { get; }
-
+        
         public void ConfigureServices(IServiceCollection services)
         {
-            services
-                .AddLogging()
-                .AddControllers();
+            services.AddLogging();
+            services.AddConnectors();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddControllers();
 
-                services.AddSwaggerGen(c =>
+            services.AddMvc();
+
+
+            services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Fanfarra.Api", Version = "v1" });
             });

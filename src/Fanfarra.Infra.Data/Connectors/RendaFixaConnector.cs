@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Fanfarra.Domain.Connectors;
@@ -11,14 +12,28 @@ namespace Fanfarra.Infra.Data.Connectors
     {
         public async Task<IEnumerable<RendaFixa>> ObterCustodia()
         {
-            var rendaFixa = new List<RendaFixa>();
-            using (var client = new HttpClient())
+            try
             {
-                using(var response = await client.GetAsync("http://www.mocky.io/v2/5e3429a33000008c00d96336"))
+                var rendaFixa = new List<RendaFixa>();
+                using (var client = new HttpClient())
                 {
-                    return rendaFixa = JsonConvert.DeserializeObject<List<RendaFixa>>(await response.Content.ReadAsStringAsync());
+                        using (var response =  client.GetAsync("http://www.mocky.io/v2/5e3429a33000008c00d96336").Result)
+                        {
+                            var retorno = JsonConvert.DeserializeObject<RendaFixa>(await response.Content.ReadAsStringAsync());
+
+                            rendaFixa.Add(retorno);
+                       
+                            return rendaFixa;
+                        }
+
+                    
                 }
             }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+          
         }
     }
 }
