@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+
 using System.Text;
 using System.Threading.Tasks;
 using Fanfarra.Domain.Connectors;
@@ -20,7 +21,7 @@ namespace Fanfarra.Infra.Data.Connectors
             {
                 using (var response = await client.GetAsync("http://www.mocky.io/v2/5e3428203000006b00d9632a"))
                 {
-                     return tesouroDireto = JsonConvert.DeserializeObject<List<TesouroDireto>>(await response.Content.ReadAsStringAsync());
+                     return tesouroDireto = JsonContent.DeserializeObject<List<TesouroDireto>>(await response.Content.ReadAsStringAsync());
                 }
             }
         }

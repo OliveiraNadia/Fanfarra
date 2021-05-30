@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Connectors\FundosConnector.cs" />
+    <Compile Remove="Connectors\TesouroDiretoConnector.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Fanfarra.Domain\Fanfarra.Domain.csproj" />
   </ItemGroup>
 
