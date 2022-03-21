@@ -15,9 +15,8 @@ namespace Fanfarra.Api.Controllers
             _rendaFixaConnector = rendaFixaConnector;
         }
 
-        //GET: RendaFixaController/ObterCustodia
         [HttpGet]
-        public async Task<IActionResult> ObterCustodia()
+        public async Task<IActionResult> GetCustody()
         {
             var teste = _rendaFixaConnector.ObterCustodia();
             return Ok(teste);
